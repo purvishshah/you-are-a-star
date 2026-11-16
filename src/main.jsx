@@ -27,13 +27,11 @@ function App(){
  const moment=moments[active];
  return <div className="poem" onTouchStart={e=>{touch.current={x:e.touches[0].clientX,y:e.touches[0].clientY}}} onTouchEnd={onTouchEnd}>
   <main className="stage" key={moment.id} style={{'--direction':direction}}>
-   <section className={`moment ${moment.className}`} aria-label={`Note for Moupiya, part ${active+1} of ${moments.length}`}>
+   <section className={`moment ${moment.className}`} aria-label={`Note for Moupiya, part ${active+1} of ${moments.length}`} onClick={e=>{if(e.target.closest("button"))return;go(active+1)}}>
     <div className="art"><img src={moment.art} alt={moment.alt}/><span className="paint-mark">✳</span><span className="art-grain"/></div>
     <div className="words">{active===0&&<p className="to">Moupiya,</p>}<h1>{moment.lines}</h1><p className="note">{moment.note}</p>{moment.signoff&&<p className="signoff">{moment.signoff}</p>}</div>
    </section>
   </main>
-  <button className="invisible-prev" aria-label="Previous moment" onClick={()=>go(active-1)} disabled={active===0}/>
-  <button className="invisible-next" aria-label="Next moment" onClick={()=>go(active+1)} disabled={active===moments.length-1}/>
   <div key={spark} className="magic-bloom" aria-hidden="true">{Array.from({length:18},(_,i)=><i key={i}/>)}</div>
   <div className="progress-constellation" aria-hidden="true">{moments.map((m,i)=><span key={m.id} className={i===active?'lit':''}>✦</span>)}</div>
  </div>
