@@ -4,13 +4,13 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Check, Heart, Leaf, Mai
 import './styles.css';
 
 const chapters = [
-  { id:'welcome', number:'00', label:'A little pause', title:'Before we begin, take a breath.', image:'/art/garden-door.jpg' },
-  { id:'world', number:'01', label:'The changing world', title:'A world that can make almost anything.', image:'/art/paper-collage.jpg' },
-  { id:'notice', number:'02', label:'The human eye', title:'You notice.', image:'/art/window.jpg' },
-  { id:'impact', number:'03', label:'The invisible work', title:'Some of your best work is hard to show.', image:'/art/books-studio.jpg' },
-  { id:'person', number:'04', label:'The person beyond the title', title:'You are more than the things you make.', image:'/art/letters.jpg' },
-  { id:'future', number:'05', label:'What comes next', title:'The world will keep changing. Keep becoming.', image:'/art/sunset-flight.jpg' },
-  { id:'note', number:'06', label:'A little note to keep', title:'Keep seeing. Keep wondering. Keep creating.', image:'/art/garden-path.jpg' },
+  { id:'welcome', number:'00', label:'A little pause', title:'Before we begin, take a breath.', image:null },
+  { id:'world', number:'01', label:'The changing world', title:'A world that can make almost anything.', image:null },
+  { id:'notice', number:'02', label:'The human eye', title:'You notice.', image:null },
+  { id:'impact', number:'03', label:'The invisible work', title:'Some of your best work is hard to show.', image:null },
+  { id:'person', number:'04', label:'The person beyond the title', title:'You are more than the things you make.', image:null },
+  { id:'future', number:'05', label:'What comes next', title:'The world will keep changing. Keep becoming.', image:null },
+  { id:'note', number:'06', label:'A little note to keep', title:'Keep seeing. Keep wondering. Keep creating.', image:null },
 ];
 const discoveries = [
   { icon:'🌱', title:'A little plant', text:'Someone noticed it needed sunlight. The difference between existing and thriving is sometimes just a little care.' },
