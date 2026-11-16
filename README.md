@@ -29,4 +29,4 @@ All page copy and interactive states are intentionally easy to revise in `src/ma
 
 ## Deployment
 
-The repository includes a GitHub Pages workflow. Enable Pages in repository settings with **GitHub Actions** as the build/deployment source. A private source repository does not guarantee a private hosted site; review Pages visibility before enabling deployment.
+The project includes a GitHub Pages workflow. Enable Pages in repository settings with **GitHub Actions** as the deployment source. A private source repository does not guarantee a private hosted site; review Pages visibility before enabling deployment.
