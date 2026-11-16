@@ -1,6 +1,6 @@
 # The World Still Needs Your Kind of Human
 
-A mobile-first interactive illustrated story for Moupiya, built with React and Vite.
+A mobile-first interactive illustrated story built with React and Vite.
 
 ## Run locally
 
@@ -19,14 +19,16 @@ npm run preview
 ## Project structure
 
 - `src/main.jsx` — story copy, chapter navigation and interactions
-- `src/styles.css` — responsive watercolor/scrapbook design system
-- `public/art/` — optimised illustration assets
-- `.github/workflows/` — build verification and GitHub Pages deployment workflows
+- `src/styles.css` — responsive watercolor / keepsake-journal design system
+- `public/art/` — illustrated scene artwork
+- `.github/workflows/` — build verification and GitHub Pages deployment
 
 ## Editing the story
 
-All page copy and interactive states are intentionally easy to revise in `src/main.jsx`. Replace artwork in `public/art/` while retaining the current filenames to preserve layout references.
+Copy is currently in `src/main.jsx`. Replace artwork in `public/art/` while retaining filenames to preserve layout references.
 
 ## Deployment
 
-The repository includes a GitHub Pages workflow. Enable Pages in repository settings with **GitHub Actions** as the build/deployment source. A private source repository does not guarantee a private hosted site; review Pages visibility before enabling deployment.
+The repository includes a GitHub Pages workflow. Enable Pages in repository settings with **GitHub Actions** as the build / deployment source.
+
+A private source repository does not automatically make the hosted site private. Confirm the Pages visibility setting before publishing the gift.
