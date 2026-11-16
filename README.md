@@ -1,6 +1,6 @@
 # The World Still Needs Your Kind of Human
 
-A mobile-first interactive illustrated story for Moupiya, built with React and Vite.
+A mobile-first interactive illustrated story built with React and Vite.
 
 ## Run locally
 
