@@ -1,6 +1,6 @@
 # Artwork
 
-Place the story's illustrated scene assets in this directory. Keep the existing filenames referenced by `src/main.jsx` when replacing artwork:
+Place the illustrated scene assets in this directory. Keep the existing filenames referenced by `src/main.jsx` when replacing artwork:
 
 - garden-door.jpg
 - paper-collage.jpg
