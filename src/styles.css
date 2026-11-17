@@ -133,3 +133,12 @@ html,body,#root{height:100%;overflow:hidden}
  .progress-constellation{bottom:max(13px,env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){.stage,.words,.magic-bloom,.magic-bloom i{animation:none!important}::view-transition-old(story-scene),::view-transition-new(story-scene){animation:none!important}}
+
+/* Moupiya's illustrated portrait becomes the recurring visual thread. */
+.art{background:#f5e9d7;border:1px solid #e6d5bd;box-shadow:0 18px 55px #634a3219}
+.art img{object-fit:contain!important;mix-blend-mode:multiply;filter:saturate(.96)}
+.portrait .art{background:radial-gradient(ellipse at 50% 42%,#f4d9b8 0,#f6ead7 62%,#e9d8c0 100%)}
+.window .art{background:linear-gradient(145deg,#e8e6d5,#f6e9d5 58%,#d7e0d0)}
+.studio .art{background:linear-gradient(145deg,#f3dfcb,#eee6d5 58%,#d7dfd0)}
+.night .art{background:linear-gradient(145deg,#e7d8cf,#f2e5d5 58%,#d8d8ca)}
+@media(max-width:700px){.art img{object-fit:contain!important}.art{background-color:#f5e9d7}}
