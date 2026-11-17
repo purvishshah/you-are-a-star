@@ -1,13 +1,18 @@
 import React,{useEffect,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
-import moupiya from './art/moupiya.jpg';
+import garden from './art/garden.svg';
+import windowScene from './art/window.svg';
+import studio from './art/studio.svg';
+import night from './art/night.svg';
+import mother from './art/mother.svg';
 import'./styles.css';
 
 const moments=[
-{id:'hello',art:moupiya,alt:'A hand-drawn watercolor portrait of Moupiya smiling',className:'portrait',lines:<>The world keeps asking<br/>what comes next.<br/><em>As if the answer is always in a hurry.</em></>,note:<>New tools. New tricks. New ways to make a thing.<br/>I wanted to leave you something quieter.</>},
-{id:'noticing',art:moupiya,alt:'Moupiya smiling in a soft storybook illustration',className:'window',lines:<>You notice the things<br/>most people walk past.</>,note:<>The little detail that changes a room.<br/>The pause before someone says they're fine.<br/>The light finding its way through a window.</>},
-{id:'invisible',art:moupiya,alt:'A colored-pencil illustration of Moupiya',className:'studio',lines:<>Some of the best things<br/>you do leave no evidence.</>,note:<>No screenshot for making someone feel heard.<br/>No portfolio piece for asking the kinder question.<br/>No applause for caring about the small stuff.</>},
-{id:'always',art:moupiya,alt:'A warm watercolor portrait of Moupiya',className:'night',lines:<>So, when everything<br/>changes again —</>,note:<>Keep your eye for the small things.<br/>Make what you love. Leave room for wonder.<br/>And please, don't let the world hurry you.</>,signoff:<>Your well wisher,<br/><span>Purvish</span></>}
+{id:'hello',art:garden,alt:'Moupiya in a flower-filled garden',className:'portrait',lines:<>The world keeps asking<br/>what comes next.<br/><em>As if the answer is always in a hurry.</em></>,note:<>New tools. New tricks. New ways to make a thing.<br/>I wanted to leave you something quieter.</>},
+{id:'noticing',art:windowScene,alt:'Moupiya by a sunlit window',className:'window',lines:<>You notice the things<br/>most people walk past.</>,note:<>The little detail that changes a room.<br/>The pause before someone says they're fine.<br/>The light finding its way through a window.</>},
+{id:'invisible',art:studio,alt:'Moupiya in her creative studio surrounded by sketches',className:'studio',lines:<>Some of the best things<br/>you do leave no evidence.</>,note:<>No screenshot for making someone feel heard.<br/>No portfolio piece for asking the kinder question.<br/>No applause for caring about the small stuff.</>},
+{id:'mother-designer',art:mother,alt:'Moupiya sharing a warm moment with her child at home',className:'mother',lines:<>You are a mother,<br/>and a designer too.</>,note:<>Making little worlds feel warm and new.<br/>With thoughtful hands and a generous heart,<br/>you turn the ordinary into art.</>},
+{id:'ending',art:night,alt:'Moupiya beneath a soft evening sky',className:'night',lines:<>So, when everything<br/>changes again —</>,note:<>Keep your eye for the small things.<br/>Make what you love. Leave room for wonder.<br/>And please, don't let the world hurry you.</>,signoff:<>Your well wisher,<br/><span>Purvish</span></>}
 ];
 function App(){
  const[active,setActive]=useState(0),[direction,setDirection]=useState(1),[spark,setSpark]=useState(0);
@@ -30,7 +35,7 @@ function App(){
    </section>
   </main>
   <div key={spark} className="magic-bloom" aria-hidden="true">{Array.from({length:18},(_,i)=><i key={i}/>)}</div>
-  <div className="progress-constellation" aria-hidden="true">{moments.map((m,i)=><span key={m.id} className={i===active?'lit':''}>✦</span>)}</div>
+  <div className="progress-constellation" aria-label={`Page ${active+1} of ${moments.length}`}>{moments.map((m,i)=><button key={m.id} className={i===active?'lit':''} aria-label={`Go to page ${i+1}`} onClick={()=>go(i)}>✦</button>)}</div>
  </div>
 }
 createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);
