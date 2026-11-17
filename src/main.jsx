@@ -1,18 +1,13 @@
 import React,{useEffect,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
-import garden from './art/garden.svg';
-import windowScene from './art/window.svg';
-import studio from './art/studio.svg';
-import night from './art/night.svg';
-import mother from './art/mother.svg';
 import'./styles.css';
 
 const moments=[
-{id:'hello',art:garden,alt:'Moupiya in a flower-filled garden',className:'portrait',lines:<>The world keeps asking<br/>what comes next.<br/><em>As if the answer is always in a hurry.</em></>,note:<>New tools. New tricks. New ways to make a thing.<br/>I wanted to leave you something quieter.</>},
-{id:'noticing',art:windowScene,alt:'Moupiya by a sunlit window',className:'window',lines:<>You notice the things<br/>most people walk past.</>,note:<>The little detail that changes a room.<br/>The pause before someone says they're fine.<br/>The light finding its way through a window.</>},
-{id:'invisible',art:studio,alt:'Moupiya in her creative studio surrounded by sketches',className:'studio',lines:<>Some of the best things<br/>you do leave no evidence.</>,note:<>No screenshot for making someone feel heard.<br/>No portfolio piece for asking the kinder question.<br/>No applause for caring about the small stuff.</>},
-{id:'mother-designer',art:mother,alt:'Moupiya sharing a warm moment with her child at home',className:'mother',lines:<>You are a mother,<br/>and a designer too.</>,note:<>Making little worlds feel warm and new.<br/>With thoughtful hands and a generous heart,<br/>you turn the ordinary into art.</>},
-{id:'ending',art:night,alt:'Moupiya beneath a soft evening sky',className:'night',lines:<>So, when everything<br/>changes again —</>,note:<>Keep your eye for the small things.<br/>Make what you love. Leave room for wonder.<br/>And please, don't let the world hurry you.</>,signoff:<>Your well wisher,<br/><span>Purvish</span></>}
+{id:'hello',art:'art/garden.jpg',alt:'Moupiya in a flower-filled garden',className:'portrait',lines:<>The world keeps asking<br/>what comes next.<br/><em>As if the answer is always in a hurry.</em></>,note:<>New tools. New tricks. New ways to make a thing.<br/>I wanted to leave you something quieter.</>},
+{id:'noticing',art:'art/hilltop.jpg',alt:'Moupiya by a sunlit window',className:'window',lines:<>You notice the things<br/>most people walk past.</>,note:<>The little detail that changes a room.<br/>The pause before someone says they're fine.<br/>The light finding its way through a window.</>},
+{id:'invisible',art:'art/studio.jpg',alt:'Moupiya in her creative studio surrounded by sketches',className:'studio',lines:<>Some of the best things<br/>you do leave no evidence.</>,note:<>No screenshot for making someone feel heard.<br/>No portfolio piece for asking the kinder question.<br/>No applause for caring about the small stuff.</>},
+{id:'mother-designer',art:'art/playtime.jpg',alt:'Moupiya sharing a warm moment with her child at home',className:'mother',lines:<>You are a mother,<br/>and a designer too.</>,note:<>Making little worlds feel warm and new.<br/>With thoughtful hands and a generous heart,<br/>you turn the ordinary into art.</>},
+{id:'ending',art:'art/mother-designer.jpg',alt:'Moupiya beneath a soft evening sky',className:'night',lines:<>So, when everything<br/>changes again —</>,note:<>Keep your eye for the small things.<br/>Make what you love. Leave room for wonder.<br/>And please, don't let the world hurry you.</>,signoff:<>Your well wisher,<br/><span>Purvish</span></>}
 ];
 function App(){
  const[active,setActive]=useState(0),[direction,setDirection]=useState(1),[spark,setSpark]=useState(0);
@@ -30,7 +25,7 @@ function App(){
  return <div className="poem" onTouchStart={e=>{touch.current={x:e.touches[0].clientX,y:e.touches[0].clientY}}} onTouchEnd={onTouchEnd}>
   <main className="stage" key={moment.id} style={{'--direction':direction}}>
    <section className={`moment ${moment.className}`} aria-label={`Note for Moupiya, part ${active+1} of ${moments.length}`} onClick={e=>{if(e.target.closest("button"))return;go(active+1)}}>
-    <div className="art"><img src={moment.art} alt={moment.alt}/><span className="paint-mark">✳</span><span className="art-grain"/></div>
+    <div className="art"><img src={import.meta.env.BASE_URL + moment.art} alt={moment.alt}/><span className="paint-mark">✳</span><span className="art-grain"/></div>
     <div className="words">{active===0&&<p className="to">Moupiya,</p>}<h1>{moment.lines}</h1><p className="note">{moment.note}</p>{moment.signoff&&<p className="signoff">{moment.signoff}</p>}</div>
    </section>
   </main>
