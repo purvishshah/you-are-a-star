@@ -1,6 +1,6 @@
 import React,{useEffect,useRef,useState}from'react';
 import{createRoot}from'react-dom/client';
-import moupiya from './art/moupiya.svg';
+import moupiya from './art/moupiya.jpg';
 import'./styles.css';
 
 const moments=[
